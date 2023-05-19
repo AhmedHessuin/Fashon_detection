@@ -1,0 +1,77 @@
+test_acc : 0.8898000121116638
+total images = 10000
+right = 8898
+wrong = 1102
+ACC   = 0.8898
+-------
+PRECISION X RECALL
+T-shirt/top
+TP : 836
+FP : 141
+FN : 164
+PRECISION : 0.8556806550665302
+RECALL    : 0.836
+---------
+Trouser
+TP : 976
+FP : 18
+FN : 24
+PRECISION : 0.9818913480885312
+RECALL    : 0.976
+---------
+Pullover
+TP : 867
+FP : 231
+FN : 133
+PRECISION : 0.7896174863387978
+RECALL    : 0.867
+---------
+Dress
+TP : 907
+FP : 124
+FN : 93
+PRECISION : 0.8797284190106692
+RECALL    : 0.907
+---------
+Coat
+TP : 750
+FP : 132
+FN : 250
+PRECISION : 0.8503401360544217
+RECALL    : 0.75
+---------
+Sandal
+TP : 970
+FP : 32
+FN : 30
+PRECISION : 0.9680638722554891
+RECALL    : 0.97
+---------
+Shirt
+TP : 699
+FP : 278
+FN : 301
+PRECISION : 0.7154554759467758
+RECALL    : 0.699
+---------
+Sneaker
+TP : 952
+FP : 51
+FN : 48
+PRECISION : 0.9491525423728814
+RECALL    : 0.952
+---------
+Bag
+TP : 978
+FP : 52
+FN : 22
+PRECISION : 0.9495145631067962
+RECALL    : 0.978
+---------
+Ankle boot
+TP : 963
+FP : 43
+FN : 37
+PRECISION : 0.9572564612326043
+RECALL    : 0.963
+---------
