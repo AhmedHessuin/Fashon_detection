@@ -163,3 +163,12 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
   - **HIT RATE** : how good the model over all with all classes 
 
 
+### Results of the both Models
+
+
+|Model Name|T-shirt/top|Trouser|Pullover|Dress|Coat|Sandal|Shirt|Sneaker|Bag|Ankle boot|Acc|
+|--------|---|---|---|---|---|---|---|---|---|---|---|
+|Model_1(stride_1)|PRECISION:0.798 & RECALL:0.866|PRECISION:0.981 & RECALL:0.973|PRECISION:0.851 & RECALL:0.804|PRECISION:0.923 & RECALL:0.854|PRECISION:0.781 & RECALL:0.867|PRECISION:0.982 & RECALL:0.957|PRECISION:0.703 & RECALL:0.67|PRECISION:0.921 & RECALL:0.973|PRECISION:0.968 & RECALL:0.963|PRECISION:0.971 & RECALL:0.941|0.8868%|
+|Model_2(stride_2)|PRECISION:0.855 & RECALL:0.836|PRECISION:0.981 & RECALL:0.976|PRECISION:0.789 & RECALL:0.867|PRECISION:0.879 & RECALL:0.907|PRECISION:0.850 & RECALL:0.75|PRECISION:0.968 & RECALL:0.97|PRECISION:0.715 & RECALL:0.699|PRECISION:0.949 & RECALL:0.952|PRECISION:0.949 & RECAL:0.978|PRECISION:0.957 & RECALL:0.963|0.8898%|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|---|
