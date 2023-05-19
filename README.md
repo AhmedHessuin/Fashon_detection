@@ -17,7 +17,7 @@ pip install -r requirments.txt
 ```
 after that the env will be ready to run 
 # Data
-- the data used is mnist dataset provided by tensorflow 
+- the data used is fashion_mnist dataset provided by tensorflow 
 - the data contain 60k train images and 10k dev images, for train 6k image for each class and 1k in the dev
 - the images are Gray lvl with (28x28)
 - the data contain labels as sprase for 10 different types of cloths 
