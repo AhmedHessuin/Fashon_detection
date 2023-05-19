@@ -10,6 +10,9 @@
 # Instalation
 first thing you need to do is install the requriments 
 ```
+conda create -n Fashon_Classification python=3.8 
+conda activate Fashon_Classification
+conda install -c anaconda cudatoolkit=11.2
 pip install -r requirments.txt
 ```
 after that the env will be ready to run 
