@@ -42,7 +42,7 @@ fashion_mnist = tf.keras.datasets.fashion_mnist
 (_,_),(test_images, test_labels)=fashion_mnist.load_data()
 test_images=np.expand_dims(test_images,-1)
 ```
-- All functions used to load the data in the [data_script.py]()
+- All functions used to load the data in the [data_script.py](data_script.py)
 # Model
 because of the simplicity of the training the model archtecture is so simple, and the method of building the archtecture was **Sequential**
 Starting with Simple model ARC
@@ -62,7 +62,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 - in this section we will talk about the models used and the different between each model
 - the FLOPs for each model 
 - the MACs for each model
-- all results can be found in [model.py]() script
+- all results can be found in [model.py](model.py) script
 ## First Model
 ### The Model ARCH
 ```
@@ -166,7 +166,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 
 
 ### Results of the both Models
-- You can get the result from [train.py]() as it save the **Chekpoints** while training and **Test** after training done, saving **Logs** in log folder 
+- You can get the result from [train.py](train.py) as it save the **Chekpoints** while training and **Test** after training done, saving **Logs** in log folder 
 |Model Name|T-shirt/top|Trouser|Pullover|Dress|Coat|Sandal|Shirt|Sneaker|Bag|Ankle boot|Acc|
 |--------|---|---|---|---|---|---|---|---|---|---|---|
 |Model_1(stride_1)|PRECISION:0.798 & RECALL:0.866|PRECISION:0.981 & RECALL:0.973|PRECISION:0.851 & RECALL:0.804|PRECISION:0.923 & RECALL:0.854|PRECISION:0.781 & RECALL:0.867|PRECISION:0.982 & RECALL:0.957|PRECISION:0.703 & RECALL:0.67|PRECISION:0.921 & RECALL:0.973|PRECISION:0.968 & RECALL:0.963|PRECISION:0.971 & RECALL:0.941|0.8868%|
