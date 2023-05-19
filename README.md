@@ -13,7 +13,7 @@ pip install -r requirments.txt
 after that the env will be ready to run 
 # Data
 - the data used is mnist dataset provided by tensorflow 
-- the data contain 60k train images and 10k dev images 
+- the data contain 60k train images and 10k dev images, for train 6k image for each class and 1k in the dev
 - the images are Gray lvl with (28x28)
 - the data contain labels as sprase for 10 different types of cloths 
 ```
@@ -164,11 +164,46 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 
 
 ### Results of the both Models
-
-
+- You can get the result from [train.py]() as it save the **Chekpoints** while training and **Test** after training done, saving **Logs** in log folder 
 |Model Name|T-shirt/top|Trouser|Pullover|Dress|Coat|Sandal|Shirt|Sneaker|Bag|Ankle boot|Acc|
 |--------|---|---|---|---|---|---|---|---|---|---|---|
 |Model_1(stride_1)|PRECISION:0.798 & RECALL:0.866|PRECISION:0.981 & RECALL:0.973|PRECISION:0.851 & RECALL:0.804|PRECISION:0.923 & RECALL:0.854|PRECISION:0.781 & RECALL:0.867|PRECISION:0.982 & RECALL:0.957|PRECISION:0.703 & RECALL:0.67|PRECISION:0.921 & RECALL:0.973|PRECISION:0.968 & RECALL:0.963|PRECISION:0.971 & RECALL:0.941|0.8868%|
 |Model_2(stride_2)|PRECISION:0.855 & RECALL:0.836|PRECISION:0.981 & RECALL:0.976|PRECISION:0.789 & RECALL:0.867|PRECISION:0.879 & RECALL:0.907|PRECISION:0.850 & RECALL:0.75|PRECISION:0.968 & RECALL:0.97|PRECISION:0.715 & RECALL:0.699|PRECISION:0.949 & RECALL:0.952|PRECISION:0.949 & RECAL:0.978|PRECISION:0.957 & RECALL:0.963|0.8898%|
 |---|---|---|---|---|---|---|---|---|---|---|---|
-|---|---|---|---|---|---|---|---|---|---|---|---|
+
+# Discussion
+in this we will discuss 
+## Approch 
+- downloading the data and see the number of label for each class
+- knowing the image size and the Color domain
+- building the model
+- try good model first with good optimizer (adam)
+- using the loss for Classification (CrossEntropy) and decide the activation function of the last layer (softmax)
+- compile the model and see it's FLOPs & MACs and Parameters 
+- advance the model with less FLOPs operation if possible and try smaller model 
+- write a call backs with tensorboard to trace the model training and save checkpoint every 1 epoch
+- testing the model with the Metric i choosed ( Precision and Recall ) with the default metric (Acc) 
+- saving the result in text file to be found later 
+
+## How to reduce number of FLOPs
+this can be done by 
+- more conv layers with stride 2 
+    - as we can see in model with Stride 2 the FLOPs got reduced
+- Pooling 
+    - that will reduce the number of operations because the input size is reduced  
+- Separable Convolutions
+    - **Spatially Separable Convolutions**doing like Inception Net breaking the 3x3 to (1x3) (3x1) 
+    - **Depthwise Separable Convolutions** Depthwise convolution followed by Pointwise convolution
+- Reduce model Size 
+
+## How to increase the Respective Field
+this can be done by 
+- stacking more layer 
+    - as we stack more layers the Respective Field increase ( this can be consuming )
+- Pooling
+    - Pooling or increasing the stride of the CONV increase the Respective FIeld as we saw in the model with Stride 2
+- Dilated Conv
+    - as it's using wilder kernal size with the same Parameters 
+    
+
+
