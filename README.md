@@ -5,6 +5,8 @@
 3. Data Handling 
 4. Model
 5. Model Details
+6. the Model Accuracy and Metric
+7. Discussion
 # Instalation
 first thing you need to do is install the requriments 
 ```
