@@ -180,7 +180,9 @@ in this we will discuss
 - try good model first with good optimizer (adam)
 - using the loss for Classification (CrossEntropy) and decide the activation function of the last layer (softmax)
 - compile the model and see it's FLOPs & MACs and Parameters 
-- advance the model with less FLOPs operation if possible and try smaller model 
+- advance the model with less FLOPs operation if possible and try smaller model  ( the choosed model is model 2 )
+    - because model 2 is faster smaller and better Accuracy
+    - can try more smaller model or only double layer model with 2 Dense layers  
 - write a call backs with tensorboard to trace the model training and save checkpoint every 1 epoch
 - testing the model with the Metric i choosed ( Precision and Recall ) with the default metric (Acc) 
 - saving the result in text file to be found later 
