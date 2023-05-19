@@ -86,6 +86,8 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 ```
 ### The Model FLOPs & MACs & Respective Field
 - the **FLOPs**
+- the equation from ![](https://snipboard.io/TcSLNO.jpg)
+- [link](https://indico.cern.ch/event/917049/contributions/3856417/attachments/2034165/3405345/Quantized_CNN_LLP.pdf)
 ```
     # conv1    256880
     # conv2   8317440
@@ -104,6 +106,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
     # total number of MACs : 3 909 180
 ```
 - the **Respective Field**
+- ![](https://rubikscode.net/wp-content/uploads/2020/05/receptive-field-formula-2.jpg)
 ```
 [['conv1', 3], ['conv2', 5], ['conv3', 7]]
 ```
@@ -131,6 +134,8 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 - note that the number of parameters is reduced because the size of the input layer for the **First Dense** is reduced thanks to the **Stride = 2 **
 ### The Model FLOPs & MACs & Respective Field
 - the **FLOPs**
+- the equation from ![](https://snipboard.io/TcSLNO.jpg) 
+- [link](https://indico.cern.ch/event/917049/contributions/3856417/attachments/2034165/3405345/Quantized_CNN_LLP.pdf)
 ```
     # conv1   256880
     # conv2  2079360
@@ -151,6 +156,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 ```
 - note the number of MACs in the most heavy layer **dense1** is reduced because the input size is reduced thanks to the **Stride = 2** effect
 - the **Respective Field**
+- ![](https://rubikscode.net/wp-content/uploads/2020/05/receptive-field-formula-2.jpg)
 ```
 [['conv1', 3], ['conv2', 7], ['conv3', 15]]
 ```
@@ -166,13 +172,13 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 
 
 ### Results of the both Models
-- You can get the result from [train.py](train.py) as it save the **Chekpoints** while training and **Test** after training done, saving **Logs** in log folder 
+ 
 |Model Name|T-shirt/top|Trouser|Pullover|Dress|Coat|Sandal|Shirt|Sneaker|Bag|Ankle boot|Acc|
 |--------|---|---|---|---|---|---|---|---|---|---|---|
 |Model_1(stride_1)|PRECISION:0.798 & RECALL:0.866|PRECISION:0.981 & RECALL:0.973|PRECISION:0.851 & RECALL:0.804|PRECISION:0.923 & RECALL:0.854|PRECISION:0.781 & RECALL:0.867|PRECISION:0.982 & RECALL:0.957|PRECISION:0.703 & RECALL:0.67|PRECISION:0.921 & RECALL:0.973|PRECISION:0.968 & RECALL:0.963|PRECISION:0.971 & RECALL:0.941|0.8868%|
 |Model_2(stride_2)|PRECISION:0.855 & RECALL:0.836|PRECISION:0.981 & RECALL:0.976|PRECISION:0.789 & RECALL:0.867|PRECISION:0.879 & RECALL:0.907|PRECISION:0.850 & RECALL:0.75|PRECISION:0.968 & RECALL:0.97|PRECISION:0.715 & RECALL:0.699|PRECISION:0.949 & RECALL:0.952|PRECISION:0.949 & RECAL:0.978|PRECISION:0.957 & RECALL:0.963|0.8898%|
 |---|---|---|---|---|---|---|---|---|---|---|---|
-
+- You can get the result from [train.py](train.py) as it save the **Chekpoints** while training and **Test** after training done, saving **Logs** in log folder
 # Discussion
 in this we will discuss 
 ## Approch 
