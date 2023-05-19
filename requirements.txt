@@ -1,0 +1,7 @@
+keras_flops==0.1.2
+matplotlib==3.4.3
+numpy==1.19.5
+tensorflow==2.12.0
+tensorflow_gpu==2.5.0
+tqdm==4.62.3
+~pencv_python==4.5.4.60
