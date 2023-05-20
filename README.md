@@ -213,6 +213,8 @@ in this we will discuss
     
 - Train
     - write a call backs with tensorboard to trace the model training and save checkpoint every 1 epoch
+    - checking do i need to augment the data, in my case i didn't need 
+    - start training with reasonable batchsize and number of epochs 
 - Test 
     - testing the model with the Metric i choosed ( Precision and Recall ) with the default metric (Acc) 
     - saving the result in text file to be found later 
