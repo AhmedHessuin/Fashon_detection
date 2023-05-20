@@ -79,9 +79,9 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
         tf.keras.layers.Dense(number_of_classes,activation='softmax',name='dense_output_layer')
     ])
 ```
-- the CONV layers are **Kernal = 3x3** with **Stride = 1** with **Activation = Relu **
+- the CONV layers are **Kernal = 3x3** with **Stride = 1** with **Activation = Relu**
 - taking input **28x28x1** indicate that it takes **gray image**
-- **Number of Parameters **
+- **Number of Parameters**
 ```
     # Total params: 3,909,430
     # Trainable params: 3,909,430
