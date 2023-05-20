@@ -91,6 +91,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 - the **FLOPs**
 - the equation from ![](https://snipboard.io/TcSLNO.jpg)
 - [link](https://indico.cern.ch/event/917049/contributions/3856417/attachments/2034165/3405345/Quantized_CNN_LLP.pdf)
+- aslo confirmed that i am doing it right with `from keras_flops import get_flops`
 ```
     # conv1    256880
     # conv2   8317440
@@ -138,6 +139,7 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 ### The Model FLOPs & MACs & Respective Field
 - the **FLOPs**
 - the equation from ![](https://snipboard.io/TcSLNO.jpg) 
+- aslo confirmed that i am doing it right with `from keras_flops import get_flops`
 - [link](https://indico.cern.ch/event/917049/contributions/3856417/attachments/2034165/3405345/Quantized_CNN_LLP.pdf)
 ```
     # conv1   256880
@@ -186,17 +188,34 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 in this we will discuss 
 ## Approch 
 - downloading the data and see the number of label for each class
-- knowing the image size and the Color domain
+- Some Data Analysis
+    - knowing the image size
+    - knowing the color domain 
+    - looking about the data distribution for each class 
+    - looking for outlier  
 - building the model
-- try good model first with good optimizer (adam)
-- using the loss for Classification (CrossEntropy) and decide the activation function of the last layer (softmax)
-- compile the model and see it's FLOPs & MACs and Parameters 
-- advance the model with less FLOPs operation if possible and try smaller model  ( the choosed model is model 2 )
-    - because model 2 is faster smaller and better Accuracy
-    - can try more smaller model or only double layer model with 2 Dense layers  
-- write a call backs with tensorboard to trace the model training and save checkpoint every 1 epoch
-- testing the model with the Metric i choosed ( Precision and Recall ) with the default metric (Acc) 
-- saving the result in text file to be found later 
+    - looking about the data and how complex is the target 
+    - based on the target complex the model is decided to be kinda right for example, not using resnet 152 for 28x28x1 images 
+    - because complex model with simple data can lead to a bad result
+        - first train with small and avg model 
+        - increase the model Parameters and experiment it 
+        - decrease the model parameters and experiment it
+        - after some experiments you will find the best model for this task  
+    - try good optimizer and train with different Learning Rate ( as it can be critical )
+    - compile the model and see it's FLOPs & MACs and Parameters 
+    - see if there is a way to reduce the FLOPs & MACs
+    - this is why i choosed model 2 instead of model 1 because model 2 achieve same result and has min FLOPs 
+    - can try more smaller model or only double layer model with 2 Dense layers (this won't achieve the task requirments for (Respective Field)
+- Loss
+    - deciding the loss is a critical decision as based on your decision the model can change a lot 
+    - see the type of loss that meet the requriment of the target 
+    - using the loss for Classification (CrossEntropy) and decide the activation function of the last layer (softmax)
+    
+- Train
+    - write a call backs with tensorboard to trace the model training and save checkpoint every 1 epoch
+- Test 
+    - testing the model with the Metric i choosed ( Precision and Recall ) with the default metric (Acc) 
+    - saving the result in text file to be found later 
 
 ## How to reduce number of FLOPs
 this can be done by 
