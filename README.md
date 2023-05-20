@@ -129,13 +129,13 @@ this model is so simple contain only 3 conv layers followed by 1 dense then anot
 ```
 - the CONV layers are **Kernal = 3x3** with **Stride = 2** with **Activation = Relu** except first CONV use **Stride = 1**
 - taking input **28x28x1** indicate that it takes **gray image**
-- **Number of Parameters **
+- **Number of Parameters**
 ```
     # Total params: 237,430
     # Trainable params: 237,430
     # Non-trainable params: 0
 ```
-- note that the number of parameters is reduced because the size of the input layer for the **First Dense** is reduced thanks to the **Stride = 2 **
+- note that the number of parameters is reduced because the size of the input layer for the **First Dense** is reduced thanks to the **Stride = 2**
 ### The Model FLOPs & MACs & Respective Field
 - the **FLOPs**
 - the equation from ![](https://snipboard.io/TcSLNO.jpg) 
